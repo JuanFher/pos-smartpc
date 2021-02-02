@@ -22,7 +22,13 @@ class ProviderFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->name,
+            'email' => $this->faker->email,
+            'ruc_number' => $this->faker->ean8,
+            'address' => $this->faker->address,
+            'phone' => $this->faker->phoneNumber,
+            'status' => $this->faker->randomElement(['ACTIVE', 'INACTIVE']),
+            'logo' => 'providers/'.$this->faker->image('public/storage/providers', 150, 150, null, false), //producto1.jpg
         ];
     }
 }
